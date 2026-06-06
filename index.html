@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karim Portfolio | Premium Cinematic</title>
+    <!-- Font Awesome v6 CDN Links for real logos -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Sh4anksu.dev</div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="first-page-container">
+        <div class="cinema-frame"></div>
+        <div class="cinematic-box">
+            <div class="icons-row">
+                <span>&lt;/&gt;</span>
+                <span>★</span>
+                <span>🅐</span>
+            </div>
+            <div class="main-title-box">
+                <h1 class="welcome-text">Welcome, I'm</h1>
+                <h1 class="dynamic-title"><span class="dynamic-text" id="typewriter"></span></h1>
+            </div>
+            <p class="credits">from sh4anksu_</p>
+        </div>
+    </div>
+
+    <section id="about" class="about-section scroll-reveal">
+        <div class="glow-bg blue-glow"></div>
+        <div class="about-container">
+            <div class="about-content">
+                <span class="status-tag">✦ AVAILABLE FOR WORK</span>
+                <h2 class="sub-title">Full Stack<br>Developer</h2>
+                <h3 class="junior-tag">Junior Programmer_</h3>
+                <p class="description-text">
+                    Creating modern websites with a clean, responsive, and elegant design. Turning ideas and concepts into engaging and user-friendly digital experiences.
+                </p>
+                <div class="skills-row">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+            <div class="image-wrapper" id="badgeWrapper">
+                <div class="badge-container" id="badgeContainer">
+                    <div class="badge-lanyard" id="lanyard"></div>
+                    <div class="card-3d" id="card3D">
+                        <img src="https://i.postimg.cc/Pxrrb0fG/my-photo.jpg" alt="my-photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section scroll-reveal">
+        <div class="glow-bg purple-glow"></div>
+        <div class="showcase-container">
+            <h2 class="section-title">Portfolio Showcase</h2>
+            <p class="section-subtitle">Explore my journey through projects, certifications, and technical expertise.</p>
+            <div class="tabs-row">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-projects')">Projects</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-certs')">Certificates</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-tech')">Tech Stack</button>
+            </div>
+            <div class="tabs-content">
+                <div id="tab-projects" class="tab-panel active">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="card-preview">
+                                <span class="preview-text">Frontend<br>Developer</span>
+                                <div class="mini-badge">🅐</div>
+                            </div>
+                            <h3 class="card-title">Project Portfolio</h3>
+                            <p class="card-desc">Portofolio karim,Professional business file. It is a collection of my most prominent works...</p>
+                            <div class="card-footer">
+                                <span class="no-link">No Link</span>
+                                <a href="#" class="details-btn">Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-certs" class="tab-panel">
+                    <p class="empty-text">[ 0 Certificates now ]</p>
+                </div>
+                <div id="tab-tech" class="tab-panel">
+                    <div class="tech-grid">
+                        <div class="tech-item"><i class="fa-brands fa-html5" style="color: #e34f26;"></i><span>HTML5</span></div>
+                        <div class="tech-item"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i><span>CSS3</span></div>
+                        <div class="tech-item"><i class="fa-brands fa-js" style="color: #f7df1e;"></i><span>JavaScript</span></div>
+                        <div class="tech-item"><i class="fa-brands fa-react" style="color: #61dafb;"></i><span>React</span></div>
+                        <div class="tech-item"><i class="fa-brands fa-node-js" style="color: #339933;"></i><span>Node.js</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section scroll-reveal">
+        <div class="glow-bg blue-glow"></div>
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's build something cinematic together. Connect with me on social media.</p>
+            <div class="contact-links">
+                <a href="https://api.whatsapp.com/send/?phone=212688463661&text&type=phone_number&app_absent=0&wame_ctl=1" target="_blank" class="contact-card whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/sh4anksuu_?igsh=MWh2aXVnZnBqa3VhYQ%3D%3D&utm_source=qr" target="_blank" class="contact-card instagram">
+                    <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@zrxv___?_r=1&_t=ZS-96yDRthnBMD" target="_blank" class="contact-card tiktok">
+                    <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
+                </a>
+                <a href="mailto:karimbxz997@gmail.com" class="contact-card gmail">
+                    <i class="fa-regular fa-envelope"></i><span>Gmail</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const words = ["Karim.", "Full Stack Dev.", "Junior Dev."];
+        let i = 0; let timer;
+        function startTypewriter() { typingEffect(); }
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) { document.getElementById('typewriter').innerHTML += word.shift(); } 
+                else { setTimeout(deletingEffect, 1200); return false; }
+                timer = setTimeout(loopTyping, 80);
+            }; loopTyping();
+        }
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) { word.pop(); document.getElementById('typewriter').innerHTML = word.join(""); } 
+                else { i = (words.length > (i + 1)) ? i+1 : 0; setTimeout(typingEffect, 400); return false; }
+                timer = setTimeout(loopDeleting, 50);
+            }; loopDeleting();
+        }
+        setTimeout(startTypewriter, 1000);
+
+        const container = document.getElementById('badgeContainer');
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active-reveal');
+                    if(entry.target.id === 'about') { container.classList.add('animate-drop'); }
+                }
+            });
+        }, { threshold: 0.1 });
+        scrollElements.forEach(el => observer.observe(el));
+
+        const wrapper = document.getElementById('badgeWrapper');
+        const lanyard = document.getElementById('lanyard');
+        const card = document.getElementById('card3D');
+        
+        if (window.innerWidth > 768) {
+            wrapper.addEventListener('mousemove', (e) => {
+                const rect = wrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left - (rect.width / 2);
+                const y = e.clientY - rect.top - (rect.height / 2);
+                const ax = -(y / rect.height) * 35; const ay = (x / rect.width) * 35;  
+                const moveX = (x / rect.width) * 25; const moveY = (y / rect.height) * 15;
+                container.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                card.style.transform = `rotateY(${ay}deg) rotateX(${ax}deg)`;
+                lanyard.style.transform = `rotateZ(${ay * 0.5}deg) scaleY(1.05)`;
+            });
+            wrapper.addEventListener('mouseleave', () => {
+                container.style.transform = 'translate(0px, 0px)';
+                card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                lanyard.style.transform = 'rotateZ(0deg) scaleY(1)';
+            });
+        }
+
+        function switchTab(event, tabId) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+<footer class="luxury-footer">
+    <div class="footer-wrap">
+        <span class="copyright-text">
+            <span id="luxury-year"></span> &copy; — <span class="brand-name">سميت الموقع</span>
+        </span>
+        <div class="animated-line"></div>
+    </div>
+</footer>
+
+<script>
+    // كيجيب العام الحالي بوحدو ديما (دابا 2026)
+    document.getElementById('luxury-year').textContent = new Date().getFullYear();
+</script>
+</script>
+</body>
+</html>

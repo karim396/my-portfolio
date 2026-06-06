@@ -1,0 +1,733 @@
+/* ========================================================
+   1. RESET & BASE STYLES
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Syne', sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #000000;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ========================================================
+   2. SCROLL REVEAL ANIMATION
+   ======================================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.scroll-reveal.active-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================================
+   3. HEADER & NAVIGATION
+   ======================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.main-header .logo {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.nav-links a:hover { 
+    color: #ffffff; 
+}
+
+/* ========================================================
+   4. HERO SECTION (FIRST PAGE)
+   ======================================================== */
+.first-page-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    position: relative;
+    z-index: 2;
+}
+
+.cinematic-box { 
+    text-align: center; 
+    padding: 20px; 
+    width: 100%; 
+}
+
+.icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #6b7280;
+}
+
+.main-title-box {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-text {
+    font-size: calc(2rem + 2.5vw);
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInCinema 1.2s ease-in-out 0.2s forwards;
+}
+
+.dynamic-title {
+    font-size: calc(2rem + 2.5vw);
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1.2;
+}
+
+.dynamic-text {
+    color: #ffffff;
+    border-right: 3px solid #ffffff;
+    padding-right: 5px;
+    animation: blink 0.75s step-end infinite;
+}
+
+.credits {
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    margin-top: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeInCinema 1s ease-out 1s forwards;
+}
+
+/* ========================================================
+   5. CINEMATIC BACKGROUNDS (STARS & GLOW)
+   ======================================================== */
+.about-section, .portfolio-section, .contact-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 8%;
+    position: relative;
+    z-index: 3;
+    background-color: #000000;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1.2px, transparent 0);
+    background-size: 50px 50px;
+    overflow: hidden;
+}
+
+.glow-bg {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.blue-glow {
+    background: #00f2fe;
+    top: 20%;
+    right: -100px;
+}
+
+.purple-glow {
+    background: #7928ca;
+    bottom: 10%;
+    left: -100px;
+}
+
+/* ========================================================
+   6. ABOUT SECTION
+   ======================================================== */
+.about-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    max-width: 1200px; 
+    gap: 60px; 
+}
+
+.about-content { 
+    flex: 1; 
+    text-align: left; 
+}
+
+.status-tag { 
+    font-size: 0.8rem; 
+    color: #888899; 
+    letter-spacing: 3px; 
+    display: block; 
+    margin-bottom: 20px; 
+    font-weight: bold;
+}
+
+.sub-title { 
+    color: #ffffff; 
+    font-size: calc(2.2rem + 2vw); 
+    font-weight: 900; 
+    line-height: 1.1; 
+    letter-spacing: 5px; 
+    text-transform: uppercase; 
+    margin-bottom: 20px; 
+}
+
+.junior-tag { 
+    font-size: 1.2rem; 
+    color: #9ca3af; 
+    margin-bottom: 25px; 
+}
+
+.description-text { 
+    color: #9ca3af; 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    max-width: 500px; 
+    margin-bottom: 40px; 
+}
+
+.skills-row { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.skills-row span { 
+    font-size: 0.9rem; 
+    color: #ffffff; 
+    border: 1px solid #2d3748; 
+    padding: 6px 18px; 
+    border-radius: 5px; 
+    background-color: rgba(255, 255, 255, 0.03); 
+}
+
+/* ========================================================
+   7. 3D BADGE INTERACTION
+   ======================================================== */
+.image-wrapper { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    perspective: 1200px; 
+    padding-top: 20px; 
+    height: 500px; 
+}
+
+.badge-container { 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    transform-style: preserve-3d; 
+    transform: translateY(-100vh); 
+}
+
+.animate-drop { 
+    animation: badgeDropPhysics 1.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+}
+
+.badge-lanyard { 
+    width: 6px; 
+    height: 120px; 
+    background: linear-gradient(to bottom, #111111, #333333); 
+    border-radius: 3px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    transform-origin: top center; 
+    transition: transform 0.15s ease-out; 
+}
+
+.card-3d { 
+    width: 280px; 
+    height: 360px; 
+    border: 12px solid #ffffff; 
+    border-radius: 12px; 
+    background: #000000; 
+    overflow: hidden; 
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9); 
+    transform-style: preserve-3d; 
+    margin-top: -5px; 
+    transition: transform 0.15s ease-out; 
+}
+
+.card-3d img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    filter: grayscale(100%) contrast(110%); 
+}
+
+/* ========================================================
+   8. PORTFOLIO SHOWCASE & TABS
+   ======================================================== */
+.showcase-container { 
+    width: 100%; 
+    max-width: 1200px; 
+    text-align: center; 
+    margin: 0 auto; 
+}
+
+.section-title { 
+    font-size: calc(1.8rem + 1.5vw); 
+    font-weight: 900; 
+    letter-spacing: 3px; 
+    text-transform: uppercase; 
+    margin-bottom: 15px; 
+}
+
+.section-subtitle { 
+    color: #6b7280; 
+    font-size: 1.1rem; 
+    margin-bottom: 50px; 
+    padding: 0 10px; 
+}
+
+.tabs-row { 
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    padding: 8px; 
+    border-radius: 40px; 
+    display: inline-flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 5px; 
+    margin-bottom: 60px; 
+}
+
+.tab-btn { 
+    background: transparent; 
+    color: #6b7280; 
+    border: none; 
+    padding: 12px 30px; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.tab-btn.active, .tab-btn:hover { 
+    background: rgba(255, 255, 255, 0.07); 
+    color: #ffffff; 
+}
+
+.tab-panel { 
+    display: none; 
+}
+
+.tab-panel.active { 
+    display: block; 
+    animation: fadeInCinema 0.5s ease-in-out forwards; 
+}
+
+/* ========================================================
+   9. PROJECTS GRID & CARDS
+   ======================================================== */
+.projects-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
+    width: 100%; 
+}
+
+.project-card { 
+    background: #0d0d11; 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    padding: 24px; 
+    border-radius: 20px; 
+    width: 100%; 
+    max-width: 350px; 
+    text-align: left; 
+    transition: 0.3s; 
+}
+
+.project-card:hover { 
+    transform: translateY(-5px); 
+    border-color: rgba(255, 255, 255, 0.15); 
+}
+
+.card-preview { 
+    background: #16161c; 
+    height: 180px; 
+    border-radius: 12px; 
+    padding: 20px; 
+    position: relative; 
+    margin-bottom: 20px; 
+    display: flex; 
+    align-items: flex-end; 
+}
+
+.preview-text { 
+    font-size: 1.4rem; 
+    font-weight: 800; 
+    color: #888888; 
+    line-height: 1.2; 
+}
+
+.mini-badge { 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    font-size: 1.2rem; 
+    color: #6b7280; 
+}
+
+.card-title { 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+    margin-bottom: 10px; 
+}
+
+.card-desc { 
+    color: #777788; 
+    font-size: 0.95rem; 
+    line-height: 1.5; 
+    margin-bottom: 25px; 
+}
+
+.card-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.no-link { 
+    color: #555566; 
+    font-size: 0.9rem; 
+}
+
+.details-btn { 
+    background: #ffffff; 
+    color: #000000; 
+    text-decoration: none; 
+    padding: 8px 18px; 
+    border-radius: 20px; 
+    font-size: 0.9rem; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+
+.details-btn:hover { 
+    background: #dddddd; 
+}
+
+.empty-text { 
+    color: #555566; 
+    font-size: 1.2rem; 
+    letter-spacing: 2px; 
+    padding: 60px 0; 
+}
+
+/* ========================================================
+   10. TECH STACK SECTION (REAL BRANDS ICONS)
+   ======================================================== */
+.tech-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    padding: 40px 0; 
+    flex-wrap: wrap; 
+    width: 100%; 
+}.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 25px 20px;
+    border-radius: 15px;
+    width: 140px;
+    transition: 0.3s;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
+}
+
+.tech-item i {
+    font-size: 3.2rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover i {
+    transform: scale(1.1);
+}
+
+.tech-item span {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #9ca3af;
+}
+
+/* ========================================================
+   11. CONTACT SECTION (REAL APPS ICONS)
+   ======================================================== */
+.contact-container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 35px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: #0a0a0f;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-card i {
+    font-size: 2.8rem;
+    color: #6b7280;
+    transition: 0.3s;
+}
+
+/* APPS HOVER GLOW SYSTEM */
+.contact-card.whatsapp:hover {
+    border-color: #25d366;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+    transform: translateY(-8px);
+}
+
+.contact-card.whatsapp:hover i {
+    color: #25d366;
+}
+
+.contact-card.instagram:hover {
+    border-color: #e1306c;
+    box-shadow: 0 10px 30px rgba(225, 48, 108, 0.2);
+    transform: translateY(-8px);
+}
+
+.contact-card.instagram:hover i {
+    color: #e1306c;
+}
+
+.contact-card.tiktok:hover {
+    border-color: #00f2fe;
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+    transform: translateY(-8px);
+}
+
+.contact-card.tiktok:hover i {
+    color: #ffffff;
+    text-shadow: 2px 2px #ff0050, -2px -2px #00f2fe;
+}
+
+.contact-card.gmail:hover {
+    border-color: #ea4335;
+    box-shadow: 0 10px 30px rgba(234, 67, 53, 0.2);
+    transform: translateY(-8px);
+}
+
+.contact-card.gmail:hover i {
+    color: #ea4335;
+}
+
+/* ========================================================
+   12. KEYFRAMES ANIMS
+   ======================================================== */
+@keyframes badgeDropPhysics {
+    0% { transform: translateY(-100vh) rotateZ(30deg); }
+    60% { transform: translateY(20px) rotateZ(-15deg); }
+    75% { transform: translateY(-10px) rotateZ(10deg); }
+    90% { transform: translateY(5px) rotateZ(-4deg); }
+    100% { transform: translateY(0px) rotateZ(0deg); }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #ffffff; }
+}
+
+@keyframes fadeInCinema {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================
+   13. MEDIA QUERIES (RESPONSIVE SYSTEM)
+   ======================================================== */
+@media (max-width: 991px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-wrapper {
+        height: auto;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 5%;
+    }
+    .nav-links a {
+        margin-left: 15px;
+        font-size: 0.8rem;
+    }
+    .glow-bg {
+        width: 250px;
+        height: 250px;
+        filter: blur(90px);
+    }
+    .card-3d {
+        width: 240px;
+        height: 320px;
+        border: 8px solid #ffffff;
+    }
+    .badge-lanyard {
+        height: 80px;
+    }
+    .tabs-row {
+        border-radius: 20px;
+    }
+    .tab-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    .nav-links a {
+        margin: 0 8px;
+    }
+    .skills-row {
+        justify-content: center;
+    }
+}/* ستايل الفوتر الفخم والبسيط */
+.luxury-footer {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #000000; /* خلفية كحلة ملائكية أو ديرها بيضة إذا كان سيتك بيض */
+    margin-top: 80px;
+}
+
+.footer-wrap {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.copyright-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* خط كلاسيكي رقيق */
+    font-size: 12px; /* حجم صغير وأنيق */
+    font-weight: 300;
+    color: #888888; /* لون رمادي خافت */
+    letter-spacing: 2px; /* مسافات بين الحروف كتعطي فخامة */
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+}
+
+.brand-name {
+    font-weight: 500;
+    color: #ffffff; /* اسم الموقع كيبان كثر */
+}
+
+/* الخط الأنيق السحري التحتاني */
+.animated-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0; /* كيبدا مخفي */
+    height: 1px; /* رقيق بزاف */
+    background-color: #ffffff; /* لون الخط */
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* الحركة فاش كيدوز الماوس */
+.footer-wrap:hover .copyright-text {
+    color: #ffffff; /* الكتابة كتضوى */
+}
+
+.footer-wrap:hover .animated-line {
+    width: 100%; /* الخط كيتمدد حتى يشد العرض كامل */
+    left: 0;
+}

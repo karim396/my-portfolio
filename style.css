@@ -683,10 +683,10 @@ body {
     }
 }/* ستايل الفوتر الفخم والبسيط */
 .luxury-footer {
-    padding: 40px 0;
+    padding: 35px 0;
     text-align: center;
     background-color: #000000; /* خلفية كحلة ملائكية أو ديرها بيضة إذا كان سيتك بيض */
-    margin-top: 80px;
+    margin-top: 75px;
 }
 
 .footer-wrap {
@@ -698,16 +698,16 @@ body {
 
 .copyright-text {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* خط كلاسيكي رقيق */
-    font-size: 12px; /* حجم صغير وأنيق */
-    font-weight: 300;
+    font-size: 9.5px; /* حجم صغير وأنيق */
+    font-weight: 259;
     color: #888888; /* لون رمادي خافت */
-    letter-spacing: 2px; /* مسافات بين الحروف كتعطي فخامة */
+    letter-spacing: 1.25px; /* مسافات بين الحروف كتعطي فخامة */
     text-transform: uppercase;
     transition: color 0.4s ease;
 }
 
 .brand-name {
-    font-weight: 500;
+    font-weight: 342;
     color: #ffffff; /* اسم الموقع كيبان كثر */
 }
 
@@ -730,4 +730,28 @@ body {
 .footer-wrap:hover .animated-line {
     width: 100%; /* الخط كيتمدد حتى يشد العرض كامل */
     left: 0;
+}
+/* الكود بالكامل داخل الميديا كويري ليعمل على الهواتف فقط */
+@media (max-width: 768px) {
+    .my-photo {
+        /* تجعل الصورة تتحرك تلقائياً وبسلاسة على الهاتف */
+        animation: floatForMobile 4s ease-in-out infinite;
+        
+        /* تضمن متجاوبة حجم الصورة مع الشاشات الصغيرة */
+        max-width: 85%;
+        height: auto;
+    }
+}
+
+/* تفاصيل حركة الطفو الخاصة بالهاتف */
+@keyframes floatForMobile {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px); /* ترتفع قليلاً لتعطي تأثير الحركة */
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
